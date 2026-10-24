@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    color: #000;
+    font-size: 16px;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 4px 8px 4px 36px;
+    background: #fff;
+}
+.logo {
+    display: block;
+    flex-shrink: 0;
+}
+.logo img {
+    display: block;
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+}
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav li + li {
+    border-left: 1px solid #ab93c4;
+}
+nav a {
+    display: block;
+    padding: 0 12px;
+    color: #f00028;
+    font-size: 32px;
+    line-height: 1.1;
+    text-decoration: none;
+}
+nav li:last-child a {
+    padding-right: 0;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    padding: 24px 8px 36px;
+    background: #eee;
+}
+.content-section {
+    min-width: 0;
+    scroll-margin-top: 16px;
+}
+h1, h2 {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0 0 16px;
+}
+p {
+    margin: 0;
+    line-height: 1.5;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 10px;
+    padding: 0 4px;
+}
+.gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+footer {
+    padding: 14px 8px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
+@media (max-width: 760px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+        padding: 8px 0 16px;
+    }
+    nav {
+        width: 100%;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+    nav li, nav li + li {
+        border-left: 0;
+        border-bottom: 1px solid #ab93c4;
+    }
+    nav a, nav li:last-child a {
+        padding: 4px 8px;
+        text-align: center;
+        line-height: 1.12;
+    }
+    main {
+        grid-template-columns: 1fr;
+        gap: 52px;
+        padding: 24px 4px 28px;
+    }
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
